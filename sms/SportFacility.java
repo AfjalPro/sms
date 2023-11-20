@@ -1,29 +1,36 @@
-public class SportFacility {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-	private Array[][] timeTable;
-	private int closiingHours;
+public class SportFacility {
+	
+
+	private Map<String, Boolean> timeTable;
+	private int closingHours;
 	private int openingHours;
-	private DatabaseController DBController;
+	// private DatabaseController DBController;
 	private List<Review> allReviews;
 
-	/**
-	 * 
-	 * @param day
-	 * @param hour
-	 */
-	public void book(integer day, integer hour) {
-		// TODO - implement SportFacility.book
-		throw new UnsupportedOperationException();
+	public SportFacility(int openingHours, int closingHours){
+		this.openingHours = openingHours;
+		this.closingHours = closingHours;
+		this.timeTable = new HashMap<>();
+		this.allReviews = new ArrayList<>();
 	}
 
-	/**
-	 * 
-	 * @param day
-	 * @param hour
-	 */
-	public void cancel(integer day, integer hour) {
-		// TODO - implement SportFacility.cancel
-		throw new UnsupportedOperationException();
+	public void book(String dateHour) {
+		if(timeTable.containsKey(dateHour) && timeTable.get(dateHour)){
+			//print or return upto booking class
+			System.out.println("Sorry, this time slot is already booked.");
+			return;
+		}
+		timeTable.put(dateHour, true);
+		System.out.println("Booking Successful for facility" + dateHour);
+	}
+
+	public void cancel(String dateHour) {
+		
 	}
 
 }
