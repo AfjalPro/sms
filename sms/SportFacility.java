@@ -62,5 +62,8 @@ public class SportFacility {
         allReviews.add(review);
     }
 
+	public List<Review> getAllReviews() {
+        return new ArrayList<>(allReviews); // Return a copy to prevent external modification
+    }
 
 }
