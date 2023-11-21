@@ -1,3 +1,5 @@
+package sms;
+
 public class Review {
 
     private String comment;
